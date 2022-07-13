@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Chngzhen/gxlib/xdates"
+	"github.com/Chngzhen/gox/dates"
 )
 
 var config *Config
@@ -130,7 +130,7 @@ func parseLayout(layout string, caller *CallerInfo, level Level, message string)
 			}
 		}
 		dateFormat := layout[3:dateFormatEndIndex]
-		format.WriteString(xdates.FormatNow2String(dateFormat))
+		format.WriteString(dates.FormatNow2String(dateFormat))
 		format.WriteString(parseLayout(layout[(dateFormatEndIndex+1):], caller, level, message))
 		return format.String()
 	// 行号。
